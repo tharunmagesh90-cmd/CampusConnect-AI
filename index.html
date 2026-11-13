@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusConnect AI | Smart Campus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">🎓</span><div><strong>CampusConnect AI</strong><small>Smart Campus Platform</small></div></div>
+    <nav>
+      <button class="nav-btn active" data-page="dashboard">🏠 <span>Dashboard</span></button>
+      <button class="nav-btn" data-page="portal">🎒 <span>Student Portal</span></button>
+      <button class="nav-btn" data-page="learning">🤖 <span>AI Learning Assistant</span></button>
+      <button class="nav-btn" data-page="classroom">💡 <span>Smart Classroom</span></button>
+      <button class="nav-btn" data-page="library">📚 <span>Smart Library</span></button>
+      <button class="nav-btn" data-page="navigator">📍 <span>Campus Navigation</span></button>
+      <button class="nav-btn" data-page="exams">📝 <span>Exam Preparation</span></button>
+      <button class="nav-btn" data-page="alerts">🔔 <span>Smart Alerts</span><b id="navAlertCount" class="nav-count">0</b></button>
+    </nav>
+    <div class="sidebar-bottom"><span class="live-dot"></span> Prototype mode <small>Demo data • Not official college records</small></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><p class="eyebrow">SMART EDUCATION & CAMPUS TECHNOLOGY</p><h1 id="pageTitle">Dashboard</h1><p id="pageSubtitle">Your campus, connected intelligently.</p></div>
+      <div class="student-chip">👨‍🎓 <span>Student Demo</span></div>
+    </header>
+
+    <section id="dashboard" class="page active">
+      <div class="hero">
+        <div><span class="pill">WELCOME TO YOUR SMART CAMPUS</span><h2>Learn smarter.<br>Navigate easier.</h2><p>One connected platform for academics, campus services and student support.</p><button class="btn light" data-go="learning">Explore AI Learning Assistant →</button></div>
+        <div class="hero-art">🎓<span>✦</span><i>✧</i></div>
+      </div>
+      <div class="stats-grid">
+        <article class="stat-card"><span class="stat-icon blue">📊</span><p>Attendance</p><strong id="dashAttendance">85%</strong><small>Demo academic record</small></article>
+        <article class="stat-card"><span class="stat-icon purple">📝</span><p>Assignments pending</p><strong id="dashAssignments">2</strong><small>Check your student portal</small></article>
+        <article class="stat-card"><span class="stat-icon orange">📚</span><p>Books available</p><strong id="dashBooks">4</strong><small>In demo library catalogue</small></article>
+        <article class="stat-card"><span class="stat-icon green">🔔</span><p>Unread alerts</p><strong id="dashAlerts">0</strong><small>Personalized reminders</small></article>
+      </div>
+      <div class="two-col">
+        <article class="panel"><div class="panel-heading"><div><p class="eyebrow">YOUR DAY</p><h3>Today's timetable</h3></div><button class="text-btn" data-go="portal">View all →</button></div><div id="dashTimetable" class="simple-list"></div></article>
+        <article class="panel"><div class="panel-heading"><div><p class="eyebrow">CAMPUS UPDATES</p><h3>Latest announcements</h3></div><span class="soft-tag">Demo</span></div><div id="dashNotices" class="simple-list"></div></article>
+      </div>
+      <article class="panel"><div class="panel-heading"><div><p class="eyebrow">QUICK ACCESS</p><h3>What would you like to do?</h3></div></div><div class="quick-grid">
+        <button class="quick-card" data-go="exams"><span>📝</span><b>Practice for exams</b><small>Generate a mini quiz</small></button>
+        <button class="quick-card" data-go="library"><span>📚</span><b>Find a book</b><small>Search the catalogue</small></button>
+        <button class="quick-card" data-go="navigator"><span>📍</span><b>Find a location</b><small>Explore campus places</small></button>
+        <button class="quick-card" data-go="classroom"><span>💡</span><b>Check classroom</b><small>View simulated sensors</small></button>
+      </div></article>
+    </section>
+
+    <section id="portal" class="page">
+      <div class="section-intro"><h2>Your student overview</h2><p>Attendance, timetable, results and assignment tracker in one place.</p></div>
+      <div class="stats-grid three">
+        <article class="stat-card"><p>Overall attendance</p><strong id="portalAttendance">85%</strong><small>Minimum target: 75% (demo)</small></article>
+        <article class="stat-card"><p>Current semester GPA</p><strong>8.2</strong><small>Sample result</small></article>
+        <article class="stat-card"><p>Pending assignments</p><strong id="portalPending">2</strong><small>Sample task list</small></article>
+      </div>
+      <article class="panel"><div class="panel-heading"><h3>Attendance tracker</h3><span class="soft-tag">Editable demo</span></div><label class="field-label" for="portalAttendanceInput">Set attendance percentage</label><div class="inline-form"><input id="portalAttendanceInput" type="number" min="0" max="100" value="85"><button class="btn" id="updateAttendance">Update attendance</button></div><div class="progress"><div id="portalProgress" style="width:85%"></div></div><p id="portalAttendanceMessage" class="muted"></p></article>
+      <div class="two-col">
+        <article class="panel"><h3>Today's timetable</h3><div id="portalTimetable" class="simple-list"></div></article>
+        <article class="panel"><h3>Assignments</h3><div id="assignmentList" class="simple-list"></div></article>
+      </div>
+      <article class="panel"><h3>Semester results (sample)</h3><div class="table-wrap"><table><thead><tr><th>Subject</th><th>Score</th><th>Grade</th></tr></thead><tbody><tr><td>Mathematics</td><td>78/100</td><td>B+</td></tr><tr><td>Programming</td><td>88/100</td><td>A</td></tr><tr><td>Digital Electronics</td><td>72/100</td><td>B</td></tr><tr><td>Physics</td><td>81/100</td><td>A-</td></tr></tbody></table></div></article>
+    </section>
+
+    <section id="learning" class="page">
+      <div class="section-intro"><h2>AI Learning Assistant</h2><p>Upload study notes or paste text to create a quick summary and practice quiz.</p></div>
+      <article class="panel">
+        <h3>1. Add your study material</h3><p class="muted">This browser-only demo reads .txt files. You can also paste notes below. No file is uploaded to a server.</p>
+        <label class="upload-box" for="notesFile">📄 <b>Choose a text file (.txt)</b><small>or paste your notes in the text area</small></label><input id="notesFile" type="file" accept=".txt,text/plain" hidden>
+        <textarea id="notesInput" rows="8" placeholder="Paste your notes here..."></textarea>
+        <div class="button-row"><button class="btn" id="summarizeBtn">Generate summary</button><button class="btn secondary" id="quizFromNotesBtn">Create quiz from notes</button></div>
+      </article>
+      <div class="two-col">
+        <article class="panel"><h3>📌 Study summary</h3><div id="summaryOutput" class="output-area muted">Your summary will appear here.</div></article>
+        <article class="panel"><h3>💡 Study tips</h3><div class="simple-list"><p>• Read the summary once before attempting the quiz.</p><p>• Highlight definitions, formulas and keywords.</p><p>• Revise topics you answer incorrectly.</p></div></article>
+      </div>
+      <article class="panel"><h3>Practice quiz</h3><div id="notesQuiz" class="output-area muted">Generate a quiz to see practice questions.</div></article>
+    </section>
+
+    <section id="classroom" class="page">
+      <div class="section-intro"><h2>Smart Classroom</h2><p>IoT-inspired classroom monitoring dashboard using simulated sensor values.</p></div>
+      <div class="notice-banner">⚠️ Simulation only: no physical sensors or classroom devices are connected in this prototype.</div>
+      <div class="stats-grid">
+        <article class="stat-card"><span class="stat-icon blue">👥</span><p>Occupancy</p><strong id="occupancyValue">24 / 40</strong><small id="occupancyStatus">60% capacity</small></article>
+        <article class="stat-card"><span class="stat-icon orange">🌡️</span><p>Temperature</p><strong id="temperatureValue">24°C</strong><small>Simulated sensor</small></article>
+        <article class="stat-card"><span class="stat-icon green">💡</span><p>Lighting</p><strong id="lightingValue">ON</strong><small id="lightingStatus">Energy saving enabled</small></article>
+        <article class="stat-card"><span class="stat-icon purple">⚡</span><p>Energy usage</p><strong id="energyValue">1.8 kW</strong><small>Estimated demo reading</small></article>
+      </div>
+      <article class="panel"><div class="panel-heading"><h3>Classroom controls</h3><span class="soft-tag">Demo controls</span></div><div class="control-row"><div><b>Classroom lights</b><small>Simulate switching the lights</small></div><label class="switch"><input type="checkbox" id="lightToggle" checked><span></span></label></div><div class="control-row"><div><b>Simulate sensor update</b><small>Generate new occupancy and temperature readings</small></div><button class="btn" id="sensorUpdate">Refresh sensor data</button></div></article>
+    </section>
+
+    <section id="library" class="page">
+      <div class="section-intro"><h2>Smart Library</h2><p>Search books, check availability and reserve a demo copy.</p></div>
+      <article class="panel"><div class="panel-heading"><h3>Book catalogue</h3><span class="soft-tag">Sample catalogue</span></div><input id="bookSearch" type="search" placeholder="Search by title, author or subject..."><div id="bookList" class="book-grid"></div></article>
+      <article class="panel"><h3>My reservations</h3><div id="reservationList" class="simple-list">No books reserved yet.</div></article>
+    </section>
+
+    <section id="navigator" class="page">
+      <div class="section-intro"><h2>Campus Navigation</h2><p>Find important campus facilities using the demo directory.</p></div>
+      <article class="panel"><h3>Search campus locations</h3><input id="placeSearch" type="search" placeholder="Search classroom, department, library..."><div id="placeList" class="place-grid"></div></article>
+      <div class="notice-banner">Location names and building descriptions are sample data. Replace them with your college's verified campus map before presenting.</div>
+    </section>
+
+    <section id="exams" class="page">
+      <div class="section-intro"><h2>Smart Exam Preparation</h2><p>Generate practice questions, check your answers and identify topics to revise.</p></div>
+      <article class="panel"><div class="form-grid"><div><label class="field-label" for="examSubject">Choose subject</label><select id="examSubject"><option>Generative AI</option><option>Python Programming</option><option>Digital Electronics</option><option>Mathematics</option><option>Physics</option></select></div><div><label class="field-label" for="examLevel">Question level</label><select id="examLevel"><option>Beginner</option><option>Intermediate</option></select></div></div><button class="btn" id="generateExam">Generate practice paper</button></article>
+      <article class="panel"><div class="panel-heading"><h3>Practice questions</h3><span class="soft-tag">Instant evaluation</span></div><div id="examQuestions" class="output-area muted">Choose a subject and generate your practice paper.</div><div id="examResult"></div></article>
+      <article class="panel"><h3>Performance and revision focus</h3><div id="examHistory" class="simple-list">Complete a practice paper to see your results.</div></article>
+    </section>
+
+    <section id="alerts" class="page">
+      <div class="section-intro"><h2>Smart Student Alerts</h2><p>Personalized reminders generated from your demo student activity.</p></div>
+      <div class="stats-grid three"><article class="stat-card"><p>Total alerts</p><strong id="totalAlerts">0</strong></article><article class="stat-card"><p>Unread alerts</p><strong id="unreadAlerts">0</strong></article><article class="stat-card"><p>Academic status</p><strong id="academicStatus">Good</strong></article></div>
+      <article class="panel"><div class="panel-heading"><h3>Your alerts</h3><button class="text-btn" id="markAllRead">Mark all as read</button></div><div id="smartAlertList"></div></article>
+      <article class="panel"><h3>Study recommendations</h3><div id="studyRecommendations" class="simple-list"></div></article>
+    </section>
+
+    <footer>© 2026 CampusConnect AI · Smart Education & Campus Technology <span>Hackathon prototype • Demo data</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
